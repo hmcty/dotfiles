@@ -11,7 +11,7 @@ rm ~/.vimrc
 Then clone the config repo and move the new vimrc file: 
 ```
 git clone https://github.com/hmccarty/vim-config.git .vim
-mv .vim/vimrc .vimrc
+cp .vim/vimrc .vimrc
 ```
 Lastly init and update the plugin submodules:
 ```
