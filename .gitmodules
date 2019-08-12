@@ -19,3 +19,12 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "bundle/vim"]
+	path = bundle/vim
+	url = https://github.com/dracula/vim.git
+[submodule "bundle/dracula"]
+	path = bundle/dracula
+	url = https://github.com/dracula/vim.git
+[submodule "bundle/nord-vim"]
+	path = bundle/nord-vim
+	url = https://github.com/arcticicestudio/nord-vim.git
