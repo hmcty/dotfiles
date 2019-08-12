@@ -1,0 +1,6 @@
+[submodule "bundle/comfy-motion.vim"]
+	path = bundle/comfy-motion.vim
+	url = https://github.com/yuttie/comfortable-motion.vim.git
+[submodule "bundle/ts-vim"]
+	path = bundle/ts-vim
+	url = https://github.com/leafgarland/typescript-vim.git
