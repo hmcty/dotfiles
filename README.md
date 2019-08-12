@@ -1,7 +1,7 @@
 # Vim Configuration
 This is a repo to store settings and plugins for my vim environment. Below you can find the plugin list, as well as an installation guide. 
 
-## Installation
+## Plugin Installation
 These commands are meant for a linux distribution, make sure you run them from the home directory. 
 If you already have .vim or .vimrc files then you would need to remove those: 
 ```
@@ -20,6 +20,16 @@ git init
 git submodule init
 git submodule update
 ```
+## Nord Theme Installation
+This can vary based on the user's operating system. This current configuration is only meant for the GNOME Terminal. 
+Start by installing the nord terminal color scheme: 
+```
+cd ~/.vim/nord-gnome-terminal/src/
+./nord.sh
+```
+After it installs, **right click the terminal** -> select **preferences** -> **click the Nord profile drop-down** -> select **set as default**. 
+
+Then **restart the terminal**. 
 
 ## Plugin List
 
@@ -30,4 +40,5 @@ git submodule update
 * [Tabular](https://github.com/godlygeek/tabular)
 * [Git Gutter](https://github.com/airblade/vim-gitgutter)
 * [Vim Airline](https://github.com/vim-airline/vim-airline)
+* [Nord Theme](https://www.nordtheme.com/)
 
