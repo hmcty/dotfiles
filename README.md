@@ -6,7 +6,7 @@ These commands are meant for a linux distribution, make sure you run them from t
 If you already have .vim or .vimrc files then you would need to remove those: 
 ```
 rm -r ~/.vim
-rm -r .vim
+rm ~/.vimrc
 ```
 Then clone the config repo and move the new vimrc file: 
 ```
