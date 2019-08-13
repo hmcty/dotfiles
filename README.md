@@ -1,5 +1,5 @@
 # Vim Pack
-This is a package that gives you some of the most useful vim plugins as well as additional themes. By following the instructions below you can avoid the hasstle of tracking down various plugins and easily setup a function vim environment. 
+Vim pack is an 'out the box' plugin suite that gives you the most useful and aesthetic features. By following the instructions below you can avoid the hasstle of tracking down various plugins and easily setup a functional vim environment. 
 
 ## Plugin Installation
 These commands are meant for a linux distribution, make sure you run them from the home directory. 
