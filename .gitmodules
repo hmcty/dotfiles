@@ -1,9 +1,6 @@
 [submodule "bundle/comfy-motion.vim"]
 	path = bundle/comfy-motion.vim
 	url = https://github.com/yuttie/comfortable-motion.vim.git
-[submodule "bundle/ts-vim"]
-	path = bundle/ts-vim
-	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -28,3 +25,6 @@
 [submodule "bundle/tcomment_vim"]
 	path = bundle/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim.git
+[submodule "bundle/vim-polyglot"]
+	path = bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git

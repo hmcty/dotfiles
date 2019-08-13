@@ -35,11 +35,11 @@ Then **restart the terminal**.
 
 * [Pathogen Package Manager](https://github.com/tpope/vim-pathogen)
 * [Comfortable Motion](https://github.com/yuttie/comfortable-motion.vim)
-* [Vim Typescript](https://github.com/leafgarland/typescript-vim)
-* [Vim Fugitive](https://github.com/tpope/vim-fugitive)
+* [Polygot](https://github.com/sheerun/vim-polyglot)
+* [Fugitive](https://github.com/tpope/vim-fugitive)
 * [Tabular](https://github.com/godlygeek/tabular)
-* [Git Gutter](https://github.com/airblade/vim-gitgutter)
-* [Vim Airline](https://github.com/vim-airline/vim-airline)
+* [Gutter](https://github.com/airblade/vim-gitgutter)
+* [Airline](https://github.com/vim-airline/vim-airline)
 * [Nord Theme](https://www.nordtheme.com/)
 * [TComment](https://github.com/tomtom/tcomment_vim)
 
