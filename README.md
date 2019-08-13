@@ -41,4 +41,5 @@ Then **restart the terminal**.
 * [Git Gutter](https://github.com/airblade/vim-gitgutter)
 * [Vim Airline](https://github.com/vim-airline/vim-airline)
 * [Nord Theme](https://www.nordtheme.com/)
+* [TComment](https://github.com/tomtom/tcomment_vim)
 

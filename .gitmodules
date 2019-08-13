@@ -25,3 +25,6 @@
 [submodule "nord-gnome-terminal"]
 	path = nord-gnome-terminal
 	url = https://github.com/arcticicestudio/nord-gnome-terminal.git
+[submodule "bundle/tcomment_vim"]
+	path = bundle/tcomment_vim
+	url = https://github.com/tomtom/tcomment_vim.git
