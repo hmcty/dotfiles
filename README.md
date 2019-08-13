@@ -1,5 +1,5 @@
-# Vim Configuration
-This is a repo to store settings and plugins for my vim environment. Below you can find the plugin list, as well as an installation guide. 
+# Vim Pack
+This is a package that gives you some of the most useful vim plugins as well as additional themes. By following the instructions below you can avoid the hasstle of tracking down various plugins and easily setup a function vim environment. 
 
 ## Plugin Installation
 These commands are meant for a linux distribution, make sure you run them from the home directory. 
@@ -8,7 +8,7 @@ If you already have .vim or .vimrc files then you would need to remove those:
 rm -r ~/.vim
 rm ~/.vimrc
 ```
-Then clone the config repo and move the new vimrc file: 
+Next clone the config repo and move the new vimrc file: 
 ```
 git clone https://github.com/hmccarty/vim-config.git .vim
 cp .vim/vimrc .vimrc
