@@ -1,21 +1,7 @@
 ## Plugin Installation
-These commands are meant for a linux distribution, make sure you run them from the home directory. 
-If you already have .vim or .vimrc files then you would need to remove those: 
+Simply run the setup script:
 ```
-rm -r ~/.vim
-rm ~/.vimrc
-```
-Next clone the config repo and move the new vimrc file: 
-```
-git clone https://github.com/hmccarty/dotfiles.git ~/.dotconfig
-cp ~/.dotconfig/bash/vimrc .vimrc
-```
-Lastly init and update the plugin submodules:
-```
-cd ~/.vim
-git init
-git submodule init
-git submodule update
+./setup.sh
 ```
 ## Nord Theme Installation
 This can vary based on the user's operating system. This current configuration is only meant for the GNOME Terminal. 
