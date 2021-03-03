@@ -7,12 +7,12 @@ rm ~/.vimrc
 ```
 Next clone the config repo and move the new vimrc file: 
 ```
-git clone https://github.com/hmccarty/dotfiles.git .vim
-cp .vim/vimrc .vimrc
+git clone https://github.com/hmccarty/dotfiles.git ~/.dotconfig
+cp ~/.dotconfig/bash/vimrc .vimrc
 ```
 Lastly init and update the plugin submodules:
 ```
-cd .vim
+cd ~/.vim
 git init
 git submodule init
 git submodule update
