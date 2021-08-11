@@ -1,0 +1,30 @@
+[submodule "bash/bundle/comfy-motion.vim"]
+	path = bash/bundle/comfy-motion.vim
+	url = https://github.com/yuttie/comfortable-motion.vim.git
+[submodule "bash/bundle/vim-fugitive"]
+	path = bash/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "bash/bundle/vim-airline"]
+	path = bash/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "bash/bundle/vim-airline-themes"]
+	path = bash/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "bash/bundle/vim-gitgutter"]
+	path = bash/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "bash/bundle/tabular"]
+	path = bash/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule "bash/bundle/nord"]
+	path = bash/bundle/nord
+	url = https://github.com/arcticicestudio/nord-vim.git
+[submodule "bash/nord-gnome-terminal"]
+	path = bash/nord-gnome-terminal
+	url = https://github.com/arcticicestudio/nord-gnome-terminal.git
+[submodule "bash/bundle/tcomment_vim"]
+	path = bash/bundle/tcomment_vim
+	url = https://github.com/tomtom/tcomment_vim.git
+[submodule "bash/bundle/vim-polyglot"]
+	path = bash/bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
