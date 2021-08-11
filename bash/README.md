@@ -4,7 +4,7 @@ Simply run the setup script:
 ./setup.sh
 ```
 ## Nord Theme Installation
-This can vary based on the user's operating system. This current configuration is only meant for the GNOME Terminal. 
+This can vary based on the user's operating system. Current configuration is only meant for the GNOME Terminal. 
 Start by installing the nord terminal color scheme: 
 ```
 cd ~/.vim/nord-gnome-terminal/src/
