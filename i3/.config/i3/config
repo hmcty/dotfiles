@@ -1,9 +1,3 @@
-#####################################################################################################################
-#################                          Define the $mod variable/key                             #################
-#####################################################################################################################
-
-# Key to rule them all : Super(Windows) or Alt key?
-
 # Mod4 = Windows or Super key on keyboard
 # Mod1 = Alt key on keyboard
 
@@ -13,11 +7,6 @@ set $mod Mod1
 #set Super key
 # set $mod Mod4
 
-#####################################################################################################################
-#################                          Define the movements keys - variables                    #################
-#####################################################################################################################
-
-
 #This is setup for qwerty
 set $up l
 set $down k
@@ -26,11 +15,12 @@ set $right semicolon
 
 font pango:OperatorMono Nerd Font 0
 
-#####################################################################################################################
-#################                          Single and Dual screen                                   #################
-#####################################################################################################################
-# exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --rate 60.00
-# exec xrandr --setprovideroutputsource modesetting NVIDIA-0
+# configure xrandr
+exec_always --no-startup-id ~/.config/i3/scripts/xrandr.sh
+bindsym $mod+m exec --no-startup-id ~/.config/i3/scripts/xrandr.sh
+
+# configure redshift
+exec_always --no-startup-id "redshift -l 40:-86"
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -54,16 +44,8 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 
-#####################################################################################################################
-#################                                   menu                                            #################
-#####################################################################################################################
-
 # start dmenu
 bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#1f222d' -nf '#81a1c1' -sb '#81a1c1' -sf '#1f222d' -fn 'OperatorMonoBook:bold:pixelsize=18'
-
-#####################################################################################################################
-#################                          how to exit, logoff, suspend, ...                        #################
-#####################################################################################################################
 
 bindsym $mod+0 mode "$mode_system"
 
@@ -82,28 +64,14 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-#####################################################################################################################
-#################                          reload changed configuration                             #################
-#####################################################################################################################
-
-
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-#####################################################################################################################
-#################                          Stopping an application                                  #################
-#####################################################################################################################
-
 # kill focused window
 bindsym $mod+Shift+q kill
-
-#####################################################################################################################
-#################                          Moving around in i3                                      #################
-#####################################################################################################################
-
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -135,11 +103,7 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-#####################################################################################################################
-#################                          moving around workspaces                                 #################
-#####################################################################################################################
 # next/previous workspace
-
 bindsym Mod4+Tab workspace next
 bindsym Mod1+Shift+Tab workspace prev
 bindsym $mod+Tab workspace back_and_forth
@@ -148,18 +112,11 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym Mod1+Ctrl+Right workspace next
 bindsym Mod1+Ctrl+Left workspace prev
 
-#####################################################################################################################
-#################                          Scratchpad                                        #################
-#####################################################################################################################
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
-
-#####################################################################################################################
-#################                          Tiling parameters                                        #################
-#####################################################################################################################
 
 # orientation for new workspaces
 default_orientation horizontal
@@ -186,9 +143,7 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-####################################################################################################################
 # resize window (you can also use the mouse for that)
-
 bindsym $mod+r mode "resize"
 
 mode "resize" {
@@ -214,65 +169,21 @@ mode "resize" {
        bindsym Escape mode "default"
 }
 
-
-#####################################################################################################################
-#################           autostart   -    execute applications at boot time                      #################
-#####################################################################################################################
-
-
-#Authentication dialog (polkit-gnome)
-#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-
-
-#####################################################################################################################
-#################                          applications keyboard shortcuts                          #################
-#####################################################################################################################
-
+# launch alacritty
 bindsym $mod+Return exec --no-startup-id alacritty;focus
-
-#####################################################################################################################
-#################                          screenshots                                              #################
-#####################################################################################################################
-
-#####################################################################################################################
-#################                          audio settings                                           #################
-#####################################################################################################################
-
-# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-# bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
-#####################################################################################################################
-#################                          light                                               #################
-#####################################################################################################################
-
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec light -A 1 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
-
-#####################################################################################################################
-#################                          bar toggle                                               #################
-#####################################################################################################################
 
 # bar toggle, hide or show
 bindsym $mod+b bar mode toggle
 bindsym $mod+i bar mode invisible
 
-#####################################################################################################################
-#################                          i3 gaps next                                             #################
-#####################################################################################################################
-
+# i3 gaps
 for_window [class="^.*"] border pixel 1
 gaps inner 10
 gaps outer 1
 #smart_gaps on
 #smart_borders on
 
-#####################################################################################################################
-#################                          i3 gaps change                                           #################
-#####################################################################################################################
-
+# change i3 gaps
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -310,18 +221,10 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-#####################################################################################################################
-#################                          picom and wallpaper                                      #################
-#####################################################################################################################
-
-#if you want transparency on non-focused windows, ...
+# configure picom and wallpaper
 exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id ~/.config/i3/scripts/mouse.sh
-
-#####################################################################################################################
-#################                          bar appearance                                           #################
-#####################################################################################################################
 
 bar {
    	height 25
