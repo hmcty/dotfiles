@@ -8,11 +8,11 @@
 # References:
 #   https://github.com/alacritty/alacritty
 
-background_opacity: 0.95
 window:
   padding:
     x: 5
     y: 5
+  opacity: 0.95
 
 colors:
   primary:
