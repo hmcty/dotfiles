@@ -15,6 +15,9 @@ set $right semicolon
 
 font pango:OperatorMono Nerd Font 0
 
+# configure liquidctl
+exec_always --no-startup-id ~/.config/i3/scripts/liquidctl.sh
+
 # configure xrandr
 exec_always --no-startup-id ~/.config/i3/scripts/xrandr.sh
 bindsym $mod+m exec --no-startup-id ~/.config/i3/scripts/xrandr.sh
