@@ -1,20 +1,30 @@
 # dotfiles
-Mostly used from [i3wm-nord](https://github.com/sarveshspatil111/i3wm-nord), with a few personal tweaks.
 
 Dependencies:
-- i3gaps and i3status
+
+- i3gaps
+- Polybar
+- tbsm
+- tulizu
+- PulseAudio
 - alacritty
 - picom
-- Nitrogen
+- hsetroot
 
 ## Usage
+
 The directories are configured to simply stow the desired dotfiles:
 
 ```
 stow i3 -t $HOME
-stow i3status -t $HOME
 stow alacritty -t $HOME
-stow icons -t $HOME
-stow themes -t $HOME
-stow fonts -t $HOME
+stow theme -t $HOME
+stow profile -t $HOME
+```
+
+Arch issue can be configured:
+
+```
+tulizu m /usr/share/tulizu/tizu/arch-big-logo.tizu
+tulizu i
 ```
