@@ -2,14 +2,16 @@
 
 Dependencies:
 
-- i3gaps
-- Polybar
-- tbsm
-- tulizu
-- PulseAudio
-- alacritty
+- stow
+- xorg
 - picom
 - hsetroot
+- i3gaps
+- polybar
+- tbsm
+- tulizu
+- pulseaudio
+- alacritty
 
 ## Usage
 
@@ -19,7 +21,8 @@ The directories are configured to simply stow the desired dotfiles:
 stow i3 -t $HOME
 stow alacritty -t $HOME
 stow theme -t $HOME
-stow profile -t $HOME
+stow conky -t $HOME
+stow vim -t $HOME
 ```
 
 Arch issue can be configured:
