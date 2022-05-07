@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export DEVICE=desktop
+export DEVICE=laptop
 exec tbsm
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc

@@ -16,11 +16,11 @@ case $DEVICE in
                 fi     
             done
         else
-            polybar top-primary &
+            MONITOR=$m polybar top-primary &
         fi
         ;;
 
     *)
-        polybar top-primary &
+        MONITOR=$m polybar top-primary &
         ;;
 esac
