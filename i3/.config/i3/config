@@ -24,6 +24,9 @@ bindsym $mod+m exec --no-startup-id $HOME/.config/i3/scripts/xrandr.sh; exec --n
 # configure picom
 exec_always --no-startup-id picom --config $HOME/.config/i3/picom.conf
 
+# start thunar daemon
+exec_always --no-startup-id thunar --daemon
+
 # configure wallpaper
 exec_always --no-startup-id hsetroot -root \
         -tile "$HOME/.config/i3/wallpapers/texture.jpg" \
