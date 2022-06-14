@@ -256,3 +256,4 @@ client.urgent           #900000 #900000 #ffffff #900000
 client.background       #242424
 
 exec xset r rate 300 50 &
+exec xset s off -dpms
