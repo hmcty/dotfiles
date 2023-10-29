@@ -79,6 +79,8 @@
     alacritty
     git
     stow
+    autorandr
+    vscode
   ];
 
   # Define environment variables.
