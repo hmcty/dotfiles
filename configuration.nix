@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
     ];
 
   # Allow unfree packages.
@@ -74,11 +74,11 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    vim
     neovim
     wget
     alacritty
     git
+    stow
   ];
 
   # Define environment variables.
