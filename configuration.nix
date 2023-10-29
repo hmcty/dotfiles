@@ -81,6 +81,7 @@
     stow
     autorandr
     vscode
+    zip
   ];
 
   # Define environment variables.

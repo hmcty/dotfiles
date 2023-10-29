@@ -2,6 +2,7 @@
 
 # Get the directory containing the script
 script_dir=$(dirname "$(readlink -f "$0")")
+cd $script_dir
 
 # Configure NixOS
 if [ -L "/etc/nixos/configuration.nix" ] && [ -e "/etc/nixos/configuration.nix" ]; then
@@ -12,7 +13,7 @@ else
     # Convert the answer to lowercase for case-insensitive comparison
     case "${answer,,}" in
         y)
-	    sudo ln -s "$script_dir/configuration.nix" "/etc/nixos/configuration.nix"
+	    sudo ln -s configuration.nix /etc/nixos/configuration.nix
 
 	    if [ $? -eq 0 ]; then
                 echo "Symlink created for NixOS configuration."
