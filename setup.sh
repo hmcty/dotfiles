@@ -39,7 +39,3 @@ y)
     ;;
 esac
 
-# Configure nvim
-echo "Stowing nvim dotfiles in $HOME..."
-stow nvim --target $HOME
-

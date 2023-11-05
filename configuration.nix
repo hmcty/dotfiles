@@ -6,8 +6,12 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
+    [ 
+        # Include the results of the hardware scan.
+        /etc/nixos/hardware-configuration.nix
+
+        # NeoVim configuration + plugins
+        ./nvim.nix
     ];
 
   # Allow unfree packages.
@@ -74,20 +78,28 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    neovim
+    # System utils
+    autorandr
+    unzip
+    stow
     wget
+    spotify
+
+    # Dev tools
     alacritty
     git
-    stow
-    autorandr
+    ranger
     vscode
-    zip
+
+    # Languages
+    python310
+
+    # Special case installations
+    (import (fetchTarball https://install.devenv.sh/latest)).default
   ];
 
   # Define environment variables.
   environment.variables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
     BROWSER = "firefox";
     TERMINAL = "alacritty";
   };
