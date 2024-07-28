@@ -5,21 +5,19 @@
     ./tmux.nix
   ];
 
-  home.username = "harrison.mccarty";
-  home.homeDirectory = "/Users/harrison.mccarty";
-  
+  home.username = "hmcty";
+  home.homeDirectory = "/home/hmcty";
+
   home.stateVersion = "23.05";
   home.packages = with pkgs; [
     git
-    reattach-to-user-namespace
-    neofetch
     silver-searcher
     ripgrep
     ranger
   ];
 
   home.file = {};
-  
+
   home.sessionVariables = {
     EDITOR = "nvim";
     SHELL = "fish";
@@ -27,8 +25,8 @@
 
   programs.git = {
     enable = true;
-    userName = "Harrison McCarty";
-    userEmail = "harrison.mccarty@neuralink.com";
+    userName = "Harry McCarty";
+    userEmail = "hmccarty@pm.me";
   };
 
   programs.fish = {
@@ -52,9 +50,10 @@
 
   programs.alacritty = {
     enable = true;
+    package = pkgs.alacritty;
     settings = {
-      font.size = 15;
-      
+      font.size = 13;
+
       shell = {
         args = ["-l"];
         program = "${pkgs.fish}/bin/fish";
