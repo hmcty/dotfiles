@@ -1,9 +1,13 @@
 { config, lib, pkgs, ... }:
 {
   imports = [
+    ./fish.nix
     ./nvim.nix
     ./tmux.nix
   ];
+  nixpkgs = {
+    config.allowUnfree = true;
+  };
 
   home.username = "hmcty";
   home.homeDirectory = "/home/hmcty";
@@ -28,25 +32,6 @@
     enable = true;
     userName = "Harry McCarty";
     userEmail = "hmccarty@pm.me";
-  };
-
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-        fish_add_path -p ~/bin /usr/local/bin
-    '';
-
-    plugins = [
-      {
-        name = "nix-env.fish";
-        src = pkgs.fetchFromGitHub {
-          owner = "lilyball";
-          repo = "nix-env.fish";
-          rev = "7b65bd228429e852c8fdfa07601159130a818cfa";
-          sha256 = "RG/0rfhgq6aEKNZ0XwIqOaZ6K5S4+/Y5EEMnIdtfPhk=";
-        };
-      }
-    ];
   };
 
   programs.alacritty = {

@@ -27,9 +27,10 @@
     '';
 
     plugins = with pkgs.vimPlugins; [
-        vim-lastplace
-	    vim-nix
-      	fzf-vim
+      vim-lastplace
+	  vim-nix
+      fzf-vim
+      copilot-vim
     ];
   };
 }
