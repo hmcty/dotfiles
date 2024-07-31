@@ -14,6 +14,7 @@
     silver-searcher
     ripgrep
     ranger
+    fzf
   ];
 
   home.file = {};

@@ -24,7 +24,7 @@
 	  filetype plugin on
 	  set cursorline              " highlight current cursorline
 	  set ttyfast                 " Speed up scrolling in Vim
-        '';
+    '';
 
     plugins = with pkgs.vimPlugins; [
         vim-lastplace
