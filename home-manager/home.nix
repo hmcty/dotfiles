@@ -1,20 +1,21 @@
 { config, lib, pkgs, ... }:
+with import <nixpkgs> {};
+
 {
+  nixpkgs.config.allowUnfree = true; 
+
   imports = [
     ./fish.nix
     ./nvim.nix
     ./tmux.nix
   ];
-  nixpkgs = {
-    config.allowUnfree = true;
-  };
 
   home.username = "hmcty";
-  home.homeDirectory = "/home/hmcty";
+  home.homeDirectory = if pkgs.stdenv.isLinux then 
+    "/home/hmcty" else "/Users/hmcty";
 
   home.stateVersion = "23.05";
   home.packages = with pkgs; [
-    git
     silver-searcher
     ripgrep
     ranger
@@ -26,12 +27,6 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     SHELL = "fish";
-  };
-
-  programs.git = {
-    enable = true;
-    userName = "Harry McCarty";
-    userEmail = "hmccarty@pm.me";
   };
 
   programs.alacritty = {
