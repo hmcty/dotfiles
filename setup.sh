@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/env nix-shell
+#!nix-shell -p stow
+#!nix-shell -i bash
 
 # Get the directory containing the script
 script_dir=$(dirname "$(readlink -f "$0")")
 cd $script_dir
-
-echo "Non-NixOS system detected, configuring for home-manager..."
 
 # Configure home-manager
 if [ -L "$HOME/.config/nixpkgs/home.nix" ] && [ -e "$HOME/.config/nixpkgs/home.nix" ]; then

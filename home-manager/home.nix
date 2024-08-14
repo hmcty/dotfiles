@@ -11,15 +11,15 @@ with import <nixpkgs> {};
   ];
 
   home.username = "hmcty";
-  home.homeDirectory = if pkgs.stdenv.isLinux then 
-    "/home/hmcty" else "/Users/hmcty";
+  home.homeDirectory = if pkgs.stdenv.isLinux
+    then "/home/hmcty"   # Linux
+    else "/Users/hmcty"; # macOS
 
   home.stateVersion = "23.05";
   home.packages = with pkgs; [
-    silver-searcher
     ripgrep
-    ranger
     fzf
+    clang-tools 
   ];
 
   home.file = {};
@@ -30,7 +30,7 @@ with import <nixpkgs> {};
   };
 
   programs.alacritty = {
-    enable = true;
+    enable = if pkgs.stdenv.isLinux then true else false;
     package = pkgs.alacritty;
     settings = {
       font.size = 13;
