@@ -20,6 +20,9 @@ with import <nixpkgs> {};
     ripgrep
     fzf
     clang-tools 
+    universal-ctags
+    bat
+    perl
   ];
 
   home.file = {};

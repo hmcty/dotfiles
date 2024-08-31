@@ -43,6 +43,7 @@
       fzf-vim
       copilot-vim
       vim-fugitive
+      csv-vim
     ];
   };
 }

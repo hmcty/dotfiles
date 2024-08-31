@@ -15,6 +15,9 @@
 
     functions = {
       fvf = "set fname (fzf); and vim $fname";
+      daily = "nvim ~/notes/daily/$(date +'%Y-%m-%d').md";
+      todo = "nvim ~/notes/todo.md";
+      ctags = "${pkgs.ctags}/bin/ctags $argv";
     };
   };
 }
