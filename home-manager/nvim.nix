@@ -36,6 +36,9 @@
     map <C-k> :py3f ~/.config/home-manager/clang-format.py<CR>
     imap <C-k> :py3f ~/.config/home-manager/clang-format.py<CR>
 
+    " Rooter plugin
+    let g:rooter_patterns = ['.git', 'WORKSPACE']
+
     '';
 
     plugins = with pkgs.vimPlugins; [
@@ -44,6 +47,7 @@
       copilot-vim
       vim-fugitive
       csv-vim
+      vim-rooter
     ];
   };
 }
