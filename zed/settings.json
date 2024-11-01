@@ -7,18 +7,32 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
   "vim_mode": true,
+  "base_keymap": "VSCode",
+  "theme": "Andromeda",
+  "wrap_guides": [80, 115],
+  "show_whitespaces": "all",
+  "preferred_line_length": 80,
   "ui_font_size": 16,
   "buffer_font_size": 16,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Atelier Sulphurpool Dark"
+  "shell": {
+    "program": "fish"
   },
-  "wrap_guides": [80],
-  "tab_size": 2
+  "hard_tabs": false,
+  "format_on_save": "off",
+  "file_types": {
+    "Starlark": ["*.bzl", "BUILD", "BUILD.*", "WORKSPACE"]
+  },
+  "languages": {
+    "C": {
+      "tab_size": 2
+    },
+    "C++": {
+      "tab_size": 2
+    }
+  },
+  "terminal": {
+    "font_size": 14
+  }
 }
+
