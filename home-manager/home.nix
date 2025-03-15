@@ -2,7 +2,7 @@
 with import <nixpkgs> {};
 
 {
-  nixpkgs.config.allowUnfree = true; 
+  nixpkgs.config.allowUnfree = true;
 
   imports = [
     ./fish.nix
