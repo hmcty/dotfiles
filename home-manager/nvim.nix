@@ -26,7 +26,7 @@
 	  filetype plugin on
 	  set cursorline              " highlight current cursorline
 	  set ttyfast                 " Speed up scrolling in Vim
-	  set clipboard=unnamed       " Always copy to clipboard
+	  set clipboard+=unnamedplus  " Always copy to clipboard
     set termguicolors           " Enable true colors
     let g:netrw_keepdir=0       " Fix for copying files in netrw on OSX
 
@@ -35,6 +35,16 @@
     map <C-f> :Rg<CR>
     map <C-k> :py3f ~/.config/home-manager/clang-format.py<CR>
     imap <C-k> :py3f ~/.config/home-manager/clang-format.py<CR>
+
+    vnoremap <leader>y "+y
+    nnoremap <leader>Y "+yg_
+    nnoremap <leader>y  "+y
+    nnoremap <leader>yy "+yy
+
+    nnoremap <leader>p "+p
+    nnoremap <leader>P "+P
+    vnoremap <leader>p "+p
+    vnoremap <leader>P "+P
 
     " Rooter plugin
     let g:rooter_patterns = ['.git', 'WORKSPACE']

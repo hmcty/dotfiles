@@ -39,6 +39,9 @@
     },
     "Rust": {
       "tab_size": 4
+    },
+    "CMake": {
+      "tab_size": 2
     }
   },
   "terminal": {

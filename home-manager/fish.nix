@@ -11,6 +11,9 @@
 
         # Alias for vim
         alias vim="nvim"
+
+        # Always use fish for `nix-shell`
+        any-nix-shell fish --info-right | source
     '';
 
     functions = {
@@ -18,6 +21,7 @@
       daily = "nvim ~/notes/daily/$(date +'%Y-%m-%d').md";
       todo = "nvim ~/notes/todo.md";
       ctags = "${pkgs.ctags}/bin/ctags $argv";
+      udev-reload = "sudo udevadm control --reload-rules && sudo udevadm trigger";
     };
   };
 }

@@ -23,6 +23,7 @@ with import <nixpkgs> {};
     universal-ctags
     bat
     perl
+    any-nix-shell
   ];
 
   home.file = {};
