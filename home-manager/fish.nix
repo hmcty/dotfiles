@@ -23,5 +23,21 @@
       ctags = "${pkgs.ctags}/bin/ctags $argv";
       udev-reload = "sudo udevadm control --reload-rules && sudo udevadm trigger";
     };
+    shellAbbrs = {
+      g = "git";
+      ga = "git add";
+      gwt = "git worktree";
+      v = "nvim";
+      c = "clear";
+      l = "ls";
+      ll = "ls -l";
+      la = "ls -a";
+      lla = "ls -la";
+      lh = "ls -lh";
+      ".." = "cd ..";
+      bqf = "bazel cquery --output=files";
+      br = "bazel run";
+      bb = "bazel build";
+    };
   };
 }

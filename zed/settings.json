@@ -7,10 +7,19 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "show_edit_predictions": true,
+  "edit_predictions": {
+    "disabled_globs": [],
+    "mode": "eager"
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
   "assistant": {
+    "always_allow_tool_actions": false,
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },
@@ -21,14 +30,15 @@
   "show_whitespaces": "all",
   "preferred_line_length": 80,
   "ui_font_size": 16,
-  "buffer_font_size": 16,
+  "buffer_font_size": 16.0,
   "shell": {
     "program": "fish"
   },
   "hard_tabs": false,
   "format_on_save": "on",
   "file_types": {
-    "Starlark": ["*.bzl", "BUILD", "BUILD.*", "WORKSPACE"]
+    "Starlark": ["*.bzl", "BUILD", "BUILD.*", "WORKSPACE"],
+    "cmake": ["CMakeLists.txt", "*.cmake"]
   },
   "languages": {
     "C": {
@@ -42,6 +52,8 @@
     },
     "CMake": {
       "tab_size": 2
+    "Python": {
+      "language_servers": ["!pylsp", "pyright"]
     }
   },
   "terminal": {
