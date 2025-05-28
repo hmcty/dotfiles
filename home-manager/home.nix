@@ -37,9 +37,9 @@ with import <nixpkgs> {};
     enable = if pkgs.stdenv.isLinux then true else false;
     package = pkgs.alacritty;
     settings = {
-      font.size = 13;
+      font.size = 11;
 
-      shell = {
+      terminal.shell = {
         args = ["-l"];
         program = "${pkgs.fish}/bin/fish";
       };

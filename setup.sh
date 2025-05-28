@@ -56,6 +56,31 @@ else
     esac
 fi
 
+# Configure windsurf
+if [ -L "$HOME/.config/Windsurf/User/settings.json" ] && [ -e "$HOME/.config/Windsurf/User/settings.json" ]; then
+    echo "Symlink already exists for windsurf configuration, skipping creation..."
+else
+    read -p "Would you like to create a windsurf config symlink? (Y/n) " answer
+
+    # Convert the answer to lowercase for case-insensitive comparison
+    case "${answer,,}" in
+        y)
+        mkdir -p $HOME/.config/Windsurf
+        stow --target $HOME/.config/Windsurf windsurf
+
+        if [ $? -eq 0 ]; then
+            echo "Symlink created for windsurf configuration."
+        else
+            echo "Failed to create symlink for windsurf configuration."
+        exit 1
+        fi
+        ;;
+        *)
+        echo "Skipping symlink for windsurf configuration..."
+        ;;
+    esac
+fi
+
 # Update home-manager derivation
 read -p "Would you like to rebuild your system? (Y/n) " answer
 case "${answer,,}" in

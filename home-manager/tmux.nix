@@ -8,6 +8,7 @@
     keyMode = "vi";
     extraConfig = ''
       set -g default-command ""
+      set-option -g renumber-windows on
       set-window-option -g mode-keys vi
       bind h select-pane -L
       bind j select-pane -D
