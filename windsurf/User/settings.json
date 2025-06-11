@@ -2,5 +2,7 @@
     "workbench.colorTheme": "SynthWave84",
     "terminal.integrated.defaultProfile.linux": "fish",
     "editor.formatOnSave": true,
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "git.openRepositoryInParentFolders": "never",
+    "security.workspace.trust.untrustedFiles": "open"
 }

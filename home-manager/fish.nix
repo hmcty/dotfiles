@@ -22,6 +22,7 @@
       todo = "nvim ~/notes/todo.md";
       ctags = "${pkgs.ctags}/bin/ctags $argv";
       udev-reload = "sudo udevadm control --reload-rules && sudo udevadm trigger";
+      ss = "set file $(mktemp --suffix .jpg) && import $file && echo $file";
     };
     shellAbbrs = {
       g = "git";

@@ -17,7 +17,11 @@
         "when": "chatInputHasText && chatRequestIsPaused && inChatInput && chatMode == 'ask' || chatInputHasText && inChatInput && !chatSessionRequestInProgress && chatMode == 'ask' || chatInstructionsAttached && chatRequestIsPaused && inChatInput && chatMode == 'ask' || chatInstructionsAttached && inChatInput && !chatSessionRequestInProgress && chatMode == 'ask'"
     },
     {
-        "key": "ctrl+alt+`",
+        "key": "ctrl+j",
         "command": "workbench.action.terminal.toggleTerminal",
+    },
+    {
+        "key": "ctrl+k ctrl+w",
+        "command": "workbench.action.closeAllEditors"
     },
 ]
