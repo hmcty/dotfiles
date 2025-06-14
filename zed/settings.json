@@ -15,17 +15,18 @@
   "features": {
     "edit_prediction_provider": "copilot"
   },
-  "assistant": {
+  "agent": {
+    "default_profile": "ask",
     "always_allow_tool_actions": false,
     "default_model": {
-      "provider": "zed.dev",
+      "provider": "anthropic",
       "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },
   "vim_mode": true,
   "base_keymap": "VSCode",
-  "theme": "Summercamp",
+  "theme": "Ayu Mirage",
   "wrap_guides": [80, 115],
   "show_whitespaces": "all",
   "preferred_line_length": 80,
@@ -38,22 +39,17 @@
   "format_on_save": "on",
   "file_types": {
     "Starlark": ["*.bzl", "BUILD", "BUILD.*", "WORKSPACE"],
-    "cmake": ["CMakeLists.txt", "*.cmake"]
+    "cmake": ["CMakeLists.txt", "*.cmake"],
+    "Nix": ["*.nix", "shell.nix", "default.nix"]
   },
+  "tab_size": 2,
   "languages": {
-    "C": {
-      "tab_size": 2
-    },
-    "C++": {
-      "tab_size": 2
-    },
     "Rust": {
       "tab_size": 4
     },
-    "CMake": {
-      "tab_size": 2
     "Python": {
-      "language_servers": ["!pylsp", "pyright"]
+      "language_servers": ["!pylsp", "pyright"],
+      "tab_size": 2
     }
   },
   "terminal": {

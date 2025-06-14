@@ -21,8 +21,9 @@
       daily = "nvim ~/notes/daily/$(date +'%Y-%m-%d').md";
       todo = "nvim ~/notes/todo.md";
       ctags = "${pkgs.ctags}/bin/ctags $argv";
-      udev-reload = "sudo udevadm control --reload-rules && sudo udevadm trigger";
+      udev-reload = "sudo udevadm control --reload-rules && sudo udevadm trigger
       ss = "set file $(mktemp --suffix .jpg) && import $file && echo $file";
+      notes = "nvim ~/notes/";
     };
     shellAbbrs = {
       g = "git";
