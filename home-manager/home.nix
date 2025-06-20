@@ -39,9 +39,9 @@ with import <nixpkgs> {};
     settings = {
       font.size = 11;
 
-      terminal.shell = {
-        args = ["-l"];
-        program = "${pkgs.fish}/bin/fish";
+      shell = {
+          args = ["-l"];
+          program = "${pkgs.fish}/bin/fish";
       };
     };
   };
