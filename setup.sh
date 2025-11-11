@@ -9,10 +9,15 @@ cd $script_dir
 check_and_stow() {
     local module="$1"
     local target_dir="$2"
-   
-    mkdir -p "$target_dir"
 
+    # If `.stowignore` exists, skip directory
+    if [ -f "$module/.stowignore" ]; then
+        echo "Skipping $module due to .stowignore"
+        return
+    fi
+   
     # Check if stow would create new symlinks
+    mkdir -p "$target_dir"
     local stow_output=$(stow --simulate --verbose -t "$target_dir" "$module" 2>&1)
     
     if echo "$stow_output" | grep -q "LINK"; then
@@ -44,6 +49,7 @@ check_and_stow "zed" "$HOME/.config/zed"
 check_and_stow "windsurf" "$HOME/.config/Windsurf"
 check_and_stow "polybar" "$HOME/.config/polybar"
 check_and_stow "i3" "$HOME/.config/i3"
+check_and_stow "alacritty" "$HOME/.config/alacritty"
 
 # Update home-manager derivation
 read -p "Would you like to rebuild your system? (Y/n) " answer

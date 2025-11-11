@@ -24,6 +24,8 @@ with import <nixpkgs> {};
     bat
     perl
     any-nix-shell
+    devenv
+    pyenv
   ];
 
   home.file = {};
@@ -31,19 +33,6 @@ with import <nixpkgs> {};
   home.sessionVariables = {
     EDITOR = "nvim";
     SHELL = "fish";
-  };
-
-  programs.alacritty = {
-    enable = if pkgs.stdenv.isLinux then true else false;
-    package = pkgs.alacritty;
-    settings = {
-      font.size = 11;
-
-      shell = {
-          args = ["-l"];
-          program = "${pkgs.fish}/bin/fish";
-      };
-    };
   };
 
   # Let Home Manager install and manage itself.

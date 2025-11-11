@@ -3,7 +3,7 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-        fish_add_path -p ~/.local/bin /usr/local/bin /nix/var/nix/profiles/default/bin/
+        fish_add_path -p ~/.local/bin ~/.nix-profile/bin /usr/local/bin /nix/var/nix/profiles/default/bin/
 
         # Set the default editor to neovim
         set -U EDITOR nvim

@@ -1,0 +1,8 @@
+[font]
+size = 15
+
+[terminal]
+
+[terminal.shell]
+args = ["-c", "$HOME/.nix-profile/bin/fish -l"]
+program = "sh"
