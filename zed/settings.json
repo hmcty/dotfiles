@@ -52,6 +52,9 @@
     "Python": {
       "language_servers": ["!pylsp", "pyright"],
       "tab_size": 2
+    },
+    "Make": {
+      "hard_tabs": true
     }
   },
   "terminal": {

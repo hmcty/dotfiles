@@ -50,6 +50,7 @@ check_and_stow "windsurf" "$HOME/.config/Windsurf"
 check_and_stow "polybar" "$HOME/.config/polybar"
 check_and_stow "i3" "$HOME/.config/i3"
 check_and_stow "alacritty" "$HOME/.config/alacritty"
+check_and_stow "fish-functions" "$HOME/.config/fish/functions"
 
 # Update home-manager derivation
 read -p "Would you like to rebuild your system? (Y/n) " answer
