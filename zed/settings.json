@@ -17,10 +17,10 @@
   },
   "agent": {
     "default_profile": "write",
-    "always_allow_tool_actions": false,
+    "always_allow_tool_actions": true,
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-3-7-sonnet-latest"
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5"
     }
   },
   "vim_mode": true,
@@ -43,6 +43,9 @@
   },
   "tab_size": 2,
   "languages": {
+    "CMake": {
+      "show_edit_predictions": true
+    },
     "Rust": {
       "tab_size": 4
     },

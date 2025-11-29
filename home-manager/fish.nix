@@ -11,6 +11,10 @@
 
         # Alias for vim
         alias vim="nvim"
+
+        # Load pyenv automatically
+        pyenv init - fish | source
+        fish_add_path $PYENV_ROOT/shims $PYENV_ROOT/bin
     '';
 
     functions = {
