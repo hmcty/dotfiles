@@ -26,6 +26,7 @@ with import <nixpkgs> {};
     any-nix-shell
     devenv
     pyenv
+    direnv
   ];
 
   home.file = {};

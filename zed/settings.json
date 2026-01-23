@@ -19,8 +19,8 @@
     "default_profile": "write",
     "always_allow_tool_actions": true,
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5-latest"
     }
   },
   "vim_mode": true,
@@ -43,6 +43,9 @@
   },
   "tab_size": 2,
   "languages": {
+    "C": {
+      "show_edit_predictions": true
+    },
     "CMake": {
       "show_edit_predictions": true
     },
@@ -51,7 +54,7 @@
     },
     "Python": {
       "language_servers": ["!pylsp", "pyright"],
-      "tab_size": 2
+      "tab_size": 4
     },
     "Make": {
       "hard_tabs": true
