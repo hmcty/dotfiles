@@ -18,6 +18,7 @@ with import <nixpkgs> {};
   home.stateVersion = "23.05";
   home.packages = with pkgs; [
     ripgrep
+    ast-grep
     fzf
     clang-tools 
     universal-ctags
@@ -27,6 +28,7 @@ with import <nixpkgs> {};
     devenv
     pyenv
     direnv
+    nerd-fonts.ubuntu
   ];
 
   home.file = {};
