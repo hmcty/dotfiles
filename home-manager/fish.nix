@@ -16,7 +16,7 @@
         pyenv init - fish | source
         fish_add_path $PYENV_ROOT/shims $PYENV_ROOT/bin
 
-        # direnv
+        # Load direnv automatically
         direnv hook fish | source
     '';
 

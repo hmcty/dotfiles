@@ -28,7 +28,6 @@ with import <nixpkgs> {};
     devenv
     pyenv
     direnv
-    nerd-fonts.ubuntu
   ];
 
   home.file = {};
