@@ -28,6 +28,7 @@
       udev-reload = "sudo udevadm control --reload-rules && sudo udevadm trigger";
       ss = "set file $(mktemp --suffix .jpg) && import $file && echo $file";
       notes = "nvim ~/notes/";
+      pn = "~/notes/scripts/push.sh";
     };
     shellAbbrs = {
       g = "git";
