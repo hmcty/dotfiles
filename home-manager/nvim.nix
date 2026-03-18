@@ -20,6 +20,7 @@
       nvim-treesitter
       mini-icons
       neo-tree-nvim
+      gitsigns-nvim
     ];
   };
 }
