@@ -18,6 +18,14 @@
 
         # Load direnv automatically
         direnv hook fish | source
+
+        # Add SSH keys if agent is running but has no identities
+        if test -n "$SSH_AUTH_SOCK"
+            ssh-add -l >/dev/null 2>&1
+            if test $status -eq 1
+                ssh-add
+            end
+        end
     '';
 
     functions = {
