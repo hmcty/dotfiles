@@ -21,6 +21,7 @@
       mini-icons
       neo-tree-nvim
       gitsigns-nvim
+      undotree
     ];
   };
 }

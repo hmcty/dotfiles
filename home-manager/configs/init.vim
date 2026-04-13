@@ -23,7 +23,7 @@ let g:netrw_keepdir=0       " Fix for copying files in netrw on OSX
 
 " Keybindings
 map <C-p> :GFiles<CR>
-map <C-e> :Neotree<CR>
+" map <C-e> :Neotree<CR>
 map <C-f> :Rg<CR>
 map <C-k> :py3f ~/.config/home-manager/clang-format.py<CR>
 imap <C-k> :py3f ~/.config/home-manager/clang-format.py<CR>
@@ -41,3 +41,7 @@ vnoremap <leader>P "+P
 let g:rooter_patterns = ['.git', 'WORKSPACE']
 lua require('mini.icons').setup({})
 lua require('gitsigns').setup({})
+
+if filereadable(expand('~/.config/nvim/local.vim'))
+  source ~/.config/nvim/local.vim
+endif
