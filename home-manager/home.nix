@@ -15,7 +15,7 @@ with import <nixpkgs> {};
     then "/home/hmcty"   # Linux
     else "/Users/hmcty"; # macOS
 
-  home.stateVersion = "23.05";
+  home.stateVersion = "25.05";
   home.packages = with pkgs; [
     ripgrep
     ast-grep

@@ -5,7 +5,7 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-    extraConfig = builtins.readFile ./configs/init.vim;
+    extraLuaConfig = builtins.readFile ./configs/init.lua;
 
     plugins = with pkgs.vimPlugins; [
       vim-lastplace
