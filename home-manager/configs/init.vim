@@ -42,6 +42,10 @@ let g:rooter_patterns = ['.git', 'WORKSPACE']
 lua require('mini.icons').setup({})
 lua require('gitsigns').setup({})
 
+let g:copilot_filetypes = {
+      \ 'tidal': v:false,
+      \ }
+
 if filereadable(expand('~/.config/nvim/local.vim'))
   source ~/.config/nvim/local.vim
 endif
