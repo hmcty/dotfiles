@@ -2,7 +2,12 @@
 
 killall -q polybar
 
+BAR="mybar"
+for bat in /sys/class/power_supply/BAT*; do
+    [ -d "$bat" ] && BAR="mybar-laptop" && break
+done
+
 for m in $(polybar --list-monitors | cut -d':' -f1); do
-    MONITOR=$m polybar mybar &
+    MONITOR=$m polybar $BAR &
 done
 
