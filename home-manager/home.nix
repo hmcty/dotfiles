@@ -10,9 +10,9 @@ with import <nixpkgs> {};
     ./tmux.nix
   ];
 
-  home.username = "hmcty";
+  home.username = "Harrison.McCarty";
   home.homeDirectory = if pkgs.stdenv.isLinux
-    then "/home/hmcty"   # Linux
+    then "/home/Harrison.McCarty"   # Linux
     else "/Users/hmcty"; # macOS
 
   home.stateVersion = "25.05";

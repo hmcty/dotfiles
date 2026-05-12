@@ -29,6 +29,7 @@ vim.keymap.set('', '<C-p>', ':GFiles<CR>', { silent = true })
 vim.keymap.set('', '<C-f>', ':Rg<CR>', { silent = true })
 vim.keymap.set('', '<C-k>', ':py3f ~/.config/home-manager/clang-format.py<CR>', { silent = true })
 vim.keymap.set('i', '<C-k>', '<Esc>:py3f ~/.config/home-manager/clang-format.py<CR>a', { silent = true })
+vim.keymap.set('', '<C-e>', ':Neotree<CR>', { silent = true })
 
 vim.keymap.set('v', '<leader>y', '"+y', { silent = true })
 vim.keymap.set('n', '<leader>Y', '"+yg_', { silent = true })
@@ -45,7 +46,7 @@ vim.g.copilot_filetypes = {
   tidal = false,
 }
 
-require('mini.icons').setup({})
+require('mini.icons').setup()
 require('gitsigns').setup({})
 
 local local_config = vim.fn.expand('~/.config/nvim/local.lua')
