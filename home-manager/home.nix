@@ -1,9 +1,17 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
-  requireEnv = name:
-    let value = builtins.getEnv name;
-    in if value == "" then throw "Environment variable ${name} must be set." else value;
+  requireEnv =
+    name:
+    let
+      value = builtins.getEnv name;
+    in
+    if value == "" then throw "Environment variable ${name} must be set." else value;
 in
 
 {
@@ -23,7 +31,7 @@ in
     ripgrep
     ast-grep
     fzf
-    clang-tools 
+    clang-tools
     universal-ctags
     bat
     perl
@@ -32,9 +40,10 @@ in
     pyenv
     direnv
     maim
+    nixfmt-tree
   ];
 
-  home.file = {};
+  home.file = { };
 
   home.sessionVariables = {
     EDITOR = "nvim";

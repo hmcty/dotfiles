@@ -3,29 +3,29 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-        fish_add_path -p ~/.local/bin ~/.nix-profile/bin /usr/local/bin /nix/var/nix/profiles/default/bin/
+      fish_add_path -p ~/.local/bin ~/.nix-profile/bin /usr/local/bin /nix/var/nix/profiles/default/bin/
 
-        # Set the default editor to neovim
-        set -U EDITOR nvim
-        set -U VISUAL nvim
+      # Set the default editor to neovim
+      set -U EDITOR nvim
+      set -U VISUAL nvim
 
-        # Alias for vim
-        alias vim="nvim"
+      # Alias for vim
+      alias vim="nvim"
 
-        # Load pyenv automatically
-        pyenv init - fish | source
-        fish_add_path $PYENV_ROOT/shims $PYENV_ROOT/bin
+      # Load pyenv automatically
+      pyenv init - fish | source
+      fish_add_path $PYENV_ROOT/shims $PYENV_ROOT/bin
 
-        # Load direnv automatically
-        direnv hook fish | source
+      # Load direnv automatically
+      direnv hook fish | source
 
-        # Add SSH keys if agent is running but has no identities
-        if test -n "$SSH_AUTH_SOCK"
-            ssh-add -l >/dev/null 2>&1
-            if test $status -eq 1
-                ssh-add
-            end
-        end
+      # Add SSH keys if agent is running but has no identities
+      if test -n "$SSH_AUTH_SOCK"
+          ssh-add -l >/dev/null 2>&1
+          if test $status -eq 1
+              ssh-add
+          end
+      end
     '';
 
     functions = {
