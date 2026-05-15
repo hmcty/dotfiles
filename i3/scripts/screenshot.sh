@@ -1,3 +1,5 @@
 #!/bin/sh
-scrot "$HOME/Screenshots/scrot_%Y-%m-%d_%H-%M-%S.png" \
-  --select -e 'xclip -selection clipboard -t image/png -i $f'
+output="$HOME/Screenshots/maim_$(date '+%Y-%m-%d_%H-%M-%S').png"
+
+maim --select "$output" &&
+  xclip -selection clipboard -t image/png -i "$output"

@@ -1,5 +1,10 @@
 { config, lib, pkgs, ... }:
-with import <nixpkgs> {};
+
+let
+  requireEnv = name:
+    let value = builtins.getEnv name;
+    in if value == "" then throw "Environment variable ${name} must be set." else value;
+in
 
 {
   nixpkgs.config.allowUnfree = true;
@@ -10,10 +15,8 @@ with import <nixpkgs> {};
     ./tmux.nix
   ];
 
-  home.username = "Harrison.McCarty";
-  home.homeDirectory = if pkgs.stdenv.isLinux
-    then "/home/Harrison.McCarty"   # Linux
-    else "/Users/hmcty"; # macOS
+  home.username = requireEnv "USER";
+  home.homeDirectory = requireEnv "HOME";
 
   home.stateVersion = "25.05";
   home.packages = with pkgs; [
@@ -28,6 +31,7 @@ with import <nixpkgs> {};
     devenv
     pyenv
     direnv
+    maim
   ];
 
   home.file = {};

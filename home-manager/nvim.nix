@@ -22,6 +22,7 @@
       neo-tree-nvim
       gitsigns-nvim
       undotree
+      markdown-preview-nvim
     ];
   };
 }
