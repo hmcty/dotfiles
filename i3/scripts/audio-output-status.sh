@@ -6,6 +6,10 @@ if [[ ! -f "$CONFIG_FILE" ]]; then
     exit 0
 fi
 
+if ! command -v pactl >/dev/null 2>&1; then
+    exit 0
+fi
+
 source "$CONFIG_FILE"
 
 CURRENT_SINK=$(pactl get-default-sink)
