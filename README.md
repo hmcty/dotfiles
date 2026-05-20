@@ -1,10 +1,22 @@
 # dotfiles
 
-Install nix and home-manager, then run:
+On Debian or Ubuntu, install external dependencies first:
+
+```sh
+./bootstrap.sh
+```
+
+Then stow configs and switch Home Manager:
 
 ```sh
 nix-shell -p stow
-./setup.sh
+./reload.sh
+```
+
+To only stow configs without running `home-manager switch`:
+
+```sh
+./reload.sh --skip-switch
 ```
 
 ## Using System OpenGL Drivers
@@ -20,6 +32,5 @@ nix-env -iA nixgl.auto.nixGLDefault   # or replace `nixGLDefault` with your desi
 
 For a given machine, you can avoid stowing config files:
 ```sh
-touch windsurf/.stowignore
+touch i3/.stowignore
 ```
-

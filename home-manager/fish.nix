@@ -40,6 +40,7 @@
     };
     shellAbbrs = {
       g = "git";
+      gs = "git status";
       ga = "git add";
       gwt = "git worktree";
       v = "nvim";
