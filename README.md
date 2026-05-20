@@ -9,7 +9,6 @@ On Debian or Ubuntu, install external dependencies first:
 Then stow configs and switch Home Manager:
 
 ```sh
-nix-shell -p stow
 ./reload.sh
 ```
 
