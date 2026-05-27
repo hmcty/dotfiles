@@ -1,12 +1,13 @@
 # dotfiles
 
-On Debian or Ubuntu, install external dependencies first:
+On Debian or Ubuntu, install external dependencies, stow configs, switch Home
+Manager, and install Python with pyenv:
 
 ```sh
 ./bootstrap.sh
 ```
 
-Then stow configs and switch Home Manager:
+To stow configs and switch Home Manager without running the full bootstrap:
 
 ```sh
 ./reload.sh

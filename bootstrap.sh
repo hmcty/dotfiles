@@ -41,6 +41,7 @@ check_supported_os() {
     esac
 
     have apt-get || die "apt-get is required on Debian and Ubuntu"
+    have apt-cache || die "apt-cache is required on Debian and Ubuntu"
     have dpkg || die "dpkg is required on Debian and Ubuntu"
 
     [ "$EUID" -ne 0 ] || die "run bootstrap.sh as your normal user; it will use sudo for apt packages"
@@ -71,6 +72,13 @@ install_system_packages() {
     sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y "${missing[@]}"
 }
 
+package_has_candidate() {
+    local candidate
+
+    candidate=$(apt-cache policy "$1" | awk '/Candidate:/ { print $2; exit }')
+    [ -n "$candidate" ] && [ "$candidate" != "(none)" ]
+}
+
 install_core_packages() {
     install_system_packages \
         build-essential \
@@ -85,6 +93,36 @@ install_core_packages() {
         unzip \
         xz-utils \
         libfuse2 # Required for AppImage support
+}
+
+install_python_build_dependencies() {
+    local ncurses_dev=libncurses5-dev
+    local readline_dev=libreadline6-dev
+
+    package_has_candidate "$ncurses_dev" || ncurses_dev=libncurses-dev
+    package_has_candidate "$readline_dev" || readline_dev=libreadline-dev
+
+    install_system_packages \
+        build-essential \
+        gdb \
+        lcov \
+        pkg-config \
+        libbz2-dev \
+        libffi-dev \
+        libgdbm-dev \
+        libgdbm-compat-dev \
+        liblzma-dev \
+        "$ncurses_dev" \
+        "$readline_dev" \
+        libsqlite3-dev \
+        libssl-dev \
+        lzma \
+        lzma-dev \
+        tk-dev \
+        uuid-dev \
+        zlib1g-dev \
+        libzstd-dev \
+        inetutils-inetd
 }
 
 font_installed() {
@@ -185,6 +223,99 @@ install_home_manager() {
     have home-manager || die "Home Manager installation finished, but home-manager is not available on PATH"
 }
 
+reload_home_manager() {
+    local script_dir
+
+    script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)
+
+    log "Running reload.sh to stow configs and switch Home Manager"
+    "$script_dir/reload.sh"
+    load_nix_profile
+}
+
+enable_pyenv() {
+    load_nix_profile
+
+    export PYENV_ROOT="${PYENV_ROOT:-$HOME/.pyenv}"
+    if [ -d "$HOME/.nix-profile/bin" ]; then
+        PATH="$HOME/.nix-profile/bin:$PATH"
+    fi
+    if [ -d "$PYENV_ROOT/bin" ]; then
+        PATH="$PYENV_ROOT/bin:$PATH"
+    fi
+    export PATH
+    hash -r
+
+    have pyenv || die "pyenv is not available on PATH after running reload.sh"
+    eval "$(pyenv init - bash)"
+    hash -r
+}
+
+resolve_pyenv_python_version() {
+    local requested="$1"
+    local resolved
+
+    if pyenv install --list | awk -v version="$requested" '
+        {
+            gsub(/^[[:space:]]+|[[:space:]]+$/, "", $0)
+        }
+        $0 == version {
+            found = 1
+        }
+        END {
+            exit !found
+        }
+    '; then
+        printf '%s\n' "$requested"
+        return
+    fi
+
+    if [[ "$requested" =~ ^[0-9]+[.][0-9]+$ ]]; then
+        resolved=$(
+            pyenv install --list |
+                awk -v prefix="$requested." '
+                    {
+                        gsub(/^[[:space:]]+|[[:space:]]+$/, "", $0)
+                    }
+                    index($0, prefix) == 1 && $0 ~ /^[0-9]+[.][0-9]+[.][0-9]+$/ {
+                        print $0
+                    }
+                ' |
+                sort -V |
+                tail -n 1
+        )
+
+        [ -n "$resolved" ] || die "pyenv does not list an installable Python $requested release"
+        printf '%s\n' "$resolved"
+        return
+    fi
+
+    printf '%s\n' "$requested"
+}
+
+install_pyenv_python() {
+    local requested_python_version="${PYENV_PYTHON_VERSION:-3.11}"
+    local python_version
+
+    enable_pyenv
+    python_version=$(resolve_pyenv_python_version "$requested_python_version")
+
+    if [ "$python_version" != "$requested_python_version" ]; then
+        log "Resolved Python $requested_python_version to pyenv version $python_version"
+    fi
+
+    log "Installing Python $python_version with pyenv"
+    pyenv install -s "$python_version"
+    pyenv global "$python_version"
+    pyenv rehash
+
+    pyenv versions --bare | grep -Fx "$python_version" >/dev/null ||
+        die "Python $python_version installation finished, but pyenv does not list it"
+
+    [ "$(pyenv global)" = "$python_version" ] ||
+        die "Python $python_version installation finished, but pyenv global is set to $(pyenv global)"
+}
+
 load_cargo_env() {
     if [ -r "$HOME/.cargo/env" ]; then
         # shellcheck disable=SC1090
@@ -248,13 +379,16 @@ install_i3() {
 main() {
     check_supported_os
     install_core_packages
+    install_python_build_dependencies
     install_0xproto_nerd_font
     install_nix
     install_home_manager
+    reload_home_manager
+    install_pyenv_python
     install_rustup_and_cargo
     install_alacritty
     install_i3
-    log "Bootstrap complete. Run ./reload.sh to stow configs and switch Home Manager."
+    log "Bootstrap complete."
 }
 
 main "$@"
