@@ -16,6 +16,12 @@
       pyenv init - fish | source
       fish_add_path $PYENV_ROOT/shims $PYENV_ROOT/bin
 
+      # Use the default Node version automatically when nvm.fish is installed.
+      set -g nvm_default_version latest
+      if type -q nvm
+          nvm use --silent $nvm_default_version 2>/dev/null
+      end
+
       # Load direnv automatically
       direnv hook fish | source
 

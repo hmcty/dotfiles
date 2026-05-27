@@ -42,6 +42,7 @@ in
     maim
     nixfmt-tree
     btop
+    pulseaudio
   ];
 
   home.file = { };
