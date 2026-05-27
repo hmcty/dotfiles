@@ -41,6 +41,7 @@ in
     direnv
     maim
     nixfmt-tree
+    btop
   ];
 
   home.file = { };

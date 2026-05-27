@@ -83,7 +83,8 @@ install_core_packages() {
         python3 \
         tar \
         unzip \
-        xz-utils
+        xz-utils \
+        libfuse2 # Required for AppImage support
 }
 
 font_installed() {

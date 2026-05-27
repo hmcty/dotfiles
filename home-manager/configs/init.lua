@@ -31,6 +31,12 @@ vim.keymap.set('', '<C-k>', ':py3f ~/.config/home-manager/clang-format.py<CR>', 
 vim.keymap.set('i', '<C-k>', '<Esc>:py3f ~/.config/home-manager/clang-format.py<CR>a', { silent = true })
 vim.keymap.set('', '<C-e>', ':Neotree<CR>', { silent = true })
 
+vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', { silent = true })
+vim.keymap.set('n', '<leader>tc', ':tabclose<CR>', { silent = true })
+vim.keymap.set('n', '<leader>to', ':tabonly<CR>', { silent = true })
+vim.keymap.set('n', '<leader>th', ':tabprevious<CR>', { silent = true })
+vim.keymap.set('n', '<leader>tl', ':tabnext<CR>', { silent = true })
+
 vim.keymap.set('v', '<leader>y', '"+y', { silent = true })
 vim.keymap.set('n', '<leader>Y', '"+yg_', { silent = true })
 vim.keymap.set('n', '<leader>y', '"+y', { silent = true })

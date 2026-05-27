@@ -43,6 +43,7 @@
       gs = "git status";
       ga = "git add";
       gwt = "git worktree";
+      gd = "git diff";
       v = "nvim";
       c = "clear";
       l = "ls";
