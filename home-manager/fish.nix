@@ -17,7 +17,7 @@
       fish_add_path $PYENV_ROOT/shims $PYENV_ROOT/bin
 
       # Use the default Node version automatically when nvm.fish is installed.
-      set -g nvm_default_version latest
+      set -g nvm_default_version v26.1.0
       if type -q nvm
           nvm use --silent $nvm_default_version 2>/dev/null
       end
