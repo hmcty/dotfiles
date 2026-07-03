@@ -72,7 +72,7 @@ bindsym $mod+Shift+Right move right
 
 # configure splitting
 bindsym $mod+Shift+z split h
-bindsym $mod+Shift+x split v
+bindsym $mod+Shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -182,6 +182,7 @@ bindsym $mod+c exec i3-msg "rename workspace to "$(i3-msg -t get_workspaces | jq
 
 # Toggle workspace monitor
 bindsym $mod+x move workspace to output up
+bindsym $mod+Shift+x move workspace to output right
 
 # Enable auto back and forth
 workspace_auto_back_and_forth yes
