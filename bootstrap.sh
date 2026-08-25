@@ -155,6 +155,26 @@ install_0xproto_nerd_font() {
     font_installed || die "0xProto Nerd Font installation finished, but fontconfig cannot find it"
 }
 
+install_tailscale_glyph_font() {
+    local script_dir
+    local font_dir="$HOME/.local/share/fonts/TailscaleGlyph"
+
+    script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)
+
+    if [ -f "$font_dir/TailscaleGlyph.ttf" ]; then
+        log "Tailscale Glyph font is already installed"
+        return
+    fi
+
+    log "Installing Tailscale Glyph font"
+    mkdir -p "$font_dir"
+    cp "$script_dir/fonts/tailscale-glyph/TailscaleGlyph.ttf" "$font_dir/"
+    fc-cache -f "$HOME/.local/share/fonts"
+
+    fc-match -f '%{family}\n' 'Tailscale Glyph' | grep -q 'Tailscale Glyph' ||
+        die "Tailscale Glyph font installation finished, but fontconfig cannot find it"
+}
+
 load_nix_profile() {
     local profile
 
@@ -381,6 +401,7 @@ main() {
     install_core_packages
     install_python_build_dependencies
     install_0xproto_nerd_font
+    install_tailscale_glyph_font
     install_nix
     install_home_manager
     reload_home_manager
