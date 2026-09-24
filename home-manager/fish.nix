@@ -32,6 +32,9 @@
               ssh-add
           end
       end
+
+      set -gx SSH_ASKPASS_REQUIRE never
+      set -e SSH_AUTH_SOCK
     '';
 
     functions = {

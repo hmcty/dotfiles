@@ -2,8 +2,6 @@
 
 Treat the following rules as law.
 
-After reading, always start the conversation with: "Instructions acknowledged."
-
 ## Feature Design
 
 1. Think before coding. Don't assume or hide confusion.
