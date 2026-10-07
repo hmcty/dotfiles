@@ -10,7 +10,6 @@
     plugins = with pkgs.vimPlugins; [
       vim-lastplace
       fzf-vim
-      copilot-vim
       vim-fugitive
       csv-vim
       vim-rooter

@@ -35,6 +35,9 @@ bindsym $mod+Return exec --no-startup-id alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# Force-close a window by clicking it.
+bindsym --release $mod+Control+Shift+q exec --no-startup-id xkill -button 1
+
 # lock the screen
 bindsym $mod+Shift+u exec --no-startup-id i3lock --nofork -c 000000
 

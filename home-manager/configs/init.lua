@@ -48,9 +48,6 @@ vim.keymap.set('v', '<leader>p', '"+p', { silent = true })
 vim.keymap.set('v', '<leader>P', '"+P', { silent = true })
 
 vim.g.rooter_patterns = {'.git', 'WORKSPACE'}
-vim.g.copilot_filetypes = {
-  tidal = false,
-}
 
 require('mini.icons').setup()
 require('gitsigns').setup({})
