@@ -11,6 +11,7 @@ Treat the following rules as law.
 5. Surface any trade-offs.
 6. Consider how the feature will be tested and maintained.
 7. Define success criteria. Loop until verified.
+8. Don't add unittests for code that is easily inspectable.
 
 ## Code Quality
 

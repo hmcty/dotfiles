@@ -76,5 +76,8 @@ check_and_stow "codex" "$HOME/.codex"
 if [ "$skip_switch" -eq 1 ]; then
     echo "Skipping home-manager switch..."
 else
-    home-manager switch
+    home-manager switch || exit $?
+    if command -v tmux >/dev/null 2>&1 && tmux has-session 2>/dev/null; then
+        tmux source-file "${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf"
+    fi
 fi

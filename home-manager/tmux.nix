@@ -10,6 +10,8 @@
       set -g default-command ""
       set-option -g renumber-windows on
       set-window-option -g mode-keys vi
+      bind '"' split-window -v -c "#{pane_current_path}"
+      bind % split-window -h -c "#{pane_current_path}"
       bind h select-pane -L
       bind j select-pane -D
       bind k select-pane -U
